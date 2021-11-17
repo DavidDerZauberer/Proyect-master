@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2f74306164024f8d9f20bd643d2bd4d1" Name="Diagram1">
+        <EntityTypeShape EntityType="SGPI_BDModel.Asignatura" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGPI_BDModel.Documento" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGPI_BDModel.Estudiante" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGPI_BDModel.Genero" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGPI_BDModel.Homologacion" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGPI_BDModel.Pago" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGPI_BDModel.Programacion" Width="1.5" PointX="6" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGPI_BDModel.ProgramaEstudiantil" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGPI_BDModel.Rol" Width="1.5" PointX="0.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGPI_BDModel.TipoHomologacion" Width="1.5" PointX="0.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGPI_BDModel.UsuarioAdmin" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="SGPI_BDModel.FK__Homologac__IdAsi__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="SGPI_BDModel.FK__Programac__IdAsi__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="SGPI_BDModel.FK__UsuarioAd__TipoD__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="SGPI_BDModel.FK__Estudiant__IdPag__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="SGPI_BDModel.FK__Estudiante__ID__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="SGPI_BDModel.FK__UsuarioAd__Gener__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="SGPI_BDModel.FK__Homologac__Idhom__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="SGPI_BDModel.FK__Homologac__Progr__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="SGPI_BDModel.FK__Homologacion__ID__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="SGPI_BDModel.FK__Programac__Progr__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="SGPI_BDModel.FK__UsuarioAd__Progr__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="SGPI_BDModel.FK__UsuarioAdmi__Rol__2D27B809" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

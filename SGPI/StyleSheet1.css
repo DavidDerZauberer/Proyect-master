@@ -1,0 +1,131 @@
+﻿body{
+    background: #000000;
+}
+.btn-Neon {
+    display: inline-block;
+    position: relative;
+    padding: 15px 15px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 25px;
+    text-decoration: none;
+    transition: 0.2s;
+    overflow: hidden; 
+    z-index:1;
+}
+.btn-Neon:hover {
+    text-decoration: none;
+    background: #33BCD5;
+    background: linear-gradient(to top, #33BCD5 0%, rgb(42 42 42 / 70%) 47.5%, rgba(0, 0, 0, 0) 100%);
+    transition-delay: 0s;
+}
+.videoC {
+    width: 100%;
+    height: 100%;
+    display:flex;
+}
+
+.absolute{
+    width:100%;
+    height:100px;
+    top:0;
+    right:0;
+    position:absolute;
+    text-align: center;
+    display:flex;
+    justify-content:center;
+}
+.form1 {
+    top: 120px;
+    left: 200px;
+    z-index: 100;
+    position: absolute;
+}
+.form2 {
+    top: 120px;
+    left: 500px;
+    z-index: 100;
+    position: absolute;
+}
+.form3 {
+    top: 270px;
+    left: 200px;
+    z-index: 100;
+    position: absolute;
+}
+.form4 {
+    top: 270px;
+    left: 500px;
+    z-index: 100;
+    position: absolute;
+}
+.form5 {
+    top: 420px;
+    left: 200px;
+    z-index: 100;
+    position: absolute;
+}
+.form6 {
+    top: 420px;
+    left: 500px;
+    z-index: 100;
+    position: absolute;
+}
+.form7 {
+    top: 570px;
+    left: 200px;
+    z-index: 100;
+    position: absolute;
+}
+.form8 {
+    top: 570px;
+    left: 500px;
+    z-index: 100;
+    position: absolute;
+}
+.modificar {
+    color: #33BCD5;
+}
+
+.btn3d {
+    position: relative;
+    top: -6px;
+    border: 0;
+    transition: all 40ms linear;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.btn3d:active:focus,
+.btn3d:focus:hover,
+.btn3d:focus{
+    -moz-outline-style: none;
+    outline: medium none;
+}
+.btn3d:active,
+.btn3d.active {
+    top: 2px;
+}
+
+.btn3d.btn-danger {
+    box-shadow: 0 0 0 1px #b93802 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #AA0000, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+    background-color: #D73814;
+}
+.btn3d.btn-danger:active,
+.btn3d.btn-danger.active {
+    box-shadow: 0 0 0 1px #b93802 inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+    background-color: #D73814;
+}
+.imagenSkull{
+    display: flex;
+    position: absolute;
+    justify-content:center;
+    z-index:0;
+}
+.t2{
+    position: absolute;
+    top: 150px;
+    left: 400px;
+    z-index:100;
+}

@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SGPI_BDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Asignatura">
+    <Key>
+      <PropertyRef Name="IdAsignatura" />
+    </Key>
+    <Property Name="IdAsignatura" Type="int" Nullable="false" />
+    <Property Name="NombreAsignatura" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Codigo" Type="int" Nullable="false" />
+    <Property Name="Creditos" Type="int" Nullable="false" />
+    <Property Name="nivel" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="IdProgramacion" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Documento">
+    <Key>
+      <PropertyRef Name="TipoDocumento" />
+    </Key>
+    <Property Name="TipoDocumento" Type="int" Nullable="false" />
+    <Property Name="Documento" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estudiante">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Archino" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IdPago" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Genero">
+    <Key>
+      <PropertyRef Name="Genero" />
+    </Key>
+    <Property Name="Genero" Type="int" Nullable="false" />
+    <Property Name="TipoGenero" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Homologacion">
+    <Key>
+      <PropertyRef Name="IdHomologacion" />
+    </Key>
+    <Property Name="IdHomologacion" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Programa" Type="int" Nullable="false" />
+    <Property Name="IdAsignatura" Type="int" Nullable="false" />
+    <Property Name="CodigoHomologacion" Type="int" Nullable="false" />
+    <Property Name="NotaDefinitiva" Type="float" Nullable="false" />
+    <Property Name="Idhomo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pago">
+    <Key>
+      <PropertyRef Name="IdPago" />
+    </Key>
+    <Property Name="IdPago" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="valorPago" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Programacion">
+    <Key>
+      <PropertyRef Name="IdProgramacion" />
+    </Key>
+    <Property Name="IdProgramacion" Type="int" Nullable="false" />
+    <Property Name="PeriodoAcademico" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Programa" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Aula" Type="int" Nullable="false" />
+    <Property Name="IdAsignatura" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProgramaEstudiantil">
+    <Key>
+      <PropertyRef Name="Programa" />
+    </Key>
+    <Property Name="Programa" Type="int" Nullable="false" />
+    <Property Name="tipoPrograma" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="Rol" />
+    </Key>
+    <Property Name="Rol" Type="int" Nullable="false" />
+    <Property Name="TipoRol" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoHomologacion">
+    <Key>
+      <PropertyRef Name="IdHomo" />
+    </Key>
+    <Property Name="IdHomo" Type="int" Nullable="false" />
+    <Property Name="TipoHomologacion" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsuarioAdmin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoDocumento" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Genero" Type="int" Nullable="false" />
+    <Property Name="Correo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Rol" Type="int" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Contraseña" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Programa" Type="int" Nullable="false" />
+    <Property Name="Documento" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Estudiant__IdPag__4D94879B">
+    <End Role="Pago" Type="Self.Pago" Multiplicity="1" />
+    <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pago">
+        <PropertyRef Name="IdPago" />
+      </Principal>
+      <Dependent Role="Estudiante">
+        <PropertyRef Name="IdPago" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Estudiante__ID__4CA06362">
+    <End Role="UsuarioAdmin" Type="Self.UsuarioAdmin" Multiplicity="1" />
+    <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UsuarioAdmin">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Estudiante">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Homologac__IdAsi__4316F928">
+    <End Role="Asignatura" Type="Self.Asignatura" Multiplicity="1" />
+    <End Role="Homologacion" Type="Self.Homologacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Asignatura">
+        <PropertyRef Name="IdAsignatura" />
+      </Principal>
+      <Dependent Role="Homologacion">
+        <PropertyRef Name="IdAsignatura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Homologac__Idhom__440B1D61">
+    <End Role="TipoHomologacion" Type="Self.TipoHomologacion" Multiplicity="1" />
+    <End Role="Homologacion" Type="Self.Homologacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoHomologacion">
+        <PropertyRef Name="IdHomo" />
+      </Principal>
+      <Dependent Role="Homologacion">
+        <PropertyRef Name="Idhomo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Homologac__Progr__4222D4EF">
+    <End Role="ProgramaEstudiantil" Type="Self.ProgramaEstudiantil" Multiplicity="1" />
+    <End Role="Homologacion" Type="Self.Homologacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProgramaEstudiantil">
+        <PropertyRef Name="Programa" />
+      </Principal>
+      <Dependent Role="Homologacion">
+        <PropertyRef Name="Programa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Homologacion__ID__412EB0B6">
+    <End Role="UsuarioAdmin" Type="Self.UsuarioAdmin" Multiplicity="1" />
+    <End Role="Homologacion" Type="Self.Homologacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsuarioAdmin">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Homologacion">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Programac__IdAsi__47DBAE45">
+    <End Role="Asignatura" Type="Self.Asignatura" Multiplicity="1" />
+    <End Role="Programacion" Type="Self.Programacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Asignatura">
+        <PropertyRef Name="IdAsignatura" />
+      </Principal>
+      <Dependent Role="Programacion">
+        <PropertyRef Name="IdAsignatura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Programac__Progr__46E78A0C">
+    <End Role="ProgramaEstudiantil" Type="Self.ProgramaEstudiantil" Multiplicity="1" />
+    <End Role="Programacion" Type="Self.Programacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProgramaEstudiantil">
+        <PropertyRef Name="Programa" />
+      </Principal>
+      <Dependent Role="Programacion">
+        <PropertyRef Name="Programa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsuarioAd__Gener__2C3393D0">
+    <End Role="Genero" Type="Self.Genero" Multiplicity="1" />
+    <End Role="UsuarioAdmin" Type="Self.UsuarioAdmin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genero">
+        <PropertyRef Name="Genero" />
+      </Principal>
+      <Dependent Role="UsuarioAdmin">
+        <PropertyRef Name="Genero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsuarioAd__Progr__2E1BDC42">
+    <End Role="ProgramaEstudiantil" Type="Self.ProgramaEstudiantil" Multiplicity="1" />
+    <End Role="UsuarioAdmin" Type="Self.UsuarioAdmin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProgramaEstudiantil">
+        <PropertyRef Name="Programa" />
+      </Principal>
+      <Dependent Role="UsuarioAdmin">
+        <PropertyRef Name="Programa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsuarioAd__TipoD__2B3F6F97">
+    <End Role="Documento" Type="Self.Documento" Multiplicity="1" />
+    <End Role="UsuarioAdmin" Type="Self.UsuarioAdmin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Documento">
+        <PropertyRef Name="TipoDocumento" />
+      </Principal>
+      <Dependent Role="UsuarioAdmin">
+        <PropertyRef Name="TipoDocumento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsuarioAdmi__Rol__2D27B809">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="UsuarioAdmin" Type="Self.UsuarioAdmin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="Rol" />
+      </Principal>
+      <Dependent Role="UsuarioAdmin">
+        <PropertyRef Name="Rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SGPI_BDModelStoreContainer">
+    <EntitySet Name="Asignatura" EntityType="Self.Asignatura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documento" EntityType="Self.Documento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estudiante" EntityType="Self.Estudiante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Genero" EntityType="Self.Genero" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Homologacion" EntityType="Self.Homologacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pago" EntityType="Self.Pago" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Programacion" EntityType="Self.Programacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProgramaEstudiantil" EntityType="Self.ProgramaEstudiantil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoHomologacion" EntityType="Self.TipoHomologacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsuarioAdmin" EntityType="Self.UsuarioAdmin" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Estudiant__IdPag__4D94879B" Association="Self.FK__Estudiant__IdPag__4D94879B">
+      <End Role="Pago" EntitySet="Pago" />
+      <End Role="Estudiante" EntitySet="Estudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Estudiante__ID__4CA06362" Association="Self.FK__Estudiante__ID__4CA06362">
+      <End Role="UsuarioAdmin" EntitySet="UsuarioAdmin" />
+      <End Role="Estudiante" EntitySet="Estudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Homologac__IdAsi__4316F928" Association="Self.FK__Homologac__IdAsi__4316F928">
+      <End Role="Asignatura" EntitySet="Asignatura" />
+      <End Role="Homologacion" EntitySet="Homologacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Homologac__Idhom__440B1D61" Association="Self.FK__Homologac__Idhom__440B1D61">
+      <End Role="TipoHomologacion" EntitySet="TipoHomologacion" />
+      <End Role="Homologacion" EntitySet="Homologacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Homologac__Progr__4222D4EF" Association="Self.FK__Homologac__Progr__4222D4EF">
+      <End Role="ProgramaEstudiantil" EntitySet="ProgramaEstudiantil" />
+      <End Role="Homologacion" EntitySet="Homologacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Homologacion__ID__412EB0B6" Association="Self.FK__Homologacion__ID__412EB0B6">
+      <End Role="UsuarioAdmin" EntitySet="UsuarioAdmin" />
+      <End Role="Homologacion" EntitySet="Homologacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Programac__IdAsi__47DBAE45" Association="Self.FK__Programac__IdAsi__47DBAE45">
+      <End Role="Asignatura" EntitySet="Asignatura" />
+      <End Role="Programacion" EntitySet="Programacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Programac__Progr__46E78A0C" Association="Self.FK__Programac__Progr__46E78A0C">
+      <End Role="ProgramaEstudiantil" EntitySet="ProgramaEstudiantil" />
+      <End Role="Programacion" EntitySet="Programacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsuarioAd__Gener__2C3393D0" Association="Self.FK__UsuarioAd__Gener__2C3393D0">
+      <End Role="Genero" EntitySet="Genero" />
+      <End Role="UsuarioAdmin" EntitySet="UsuarioAdmin" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsuarioAd__Progr__2E1BDC42" Association="Self.FK__UsuarioAd__Progr__2E1BDC42">
+      <End Role="ProgramaEstudiantil" EntitySet="ProgramaEstudiantil" />
+      <End Role="UsuarioAdmin" EntitySet="UsuarioAdmin" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsuarioAd__TipoD__2B3F6F97" Association="Self.FK__UsuarioAd__TipoD__2B3F6F97">
+      <End Role="Documento" EntitySet="Documento" />
+      <End Role="UsuarioAdmin" EntitySet="UsuarioAdmin" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsuarioAdmi__Rol__2D27B809" Association="Self.FK__UsuarioAdmi__Rol__2D27B809">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="UsuarioAdmin" EntitySet="UsuarioAdmin" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SGPI_BDModelStoreContainer" CdmEntityContainer="SGPI_BDEntities">
+    <EntitySetMapping Name="Asignatura">
+      <EntityTypeMapping TypeName="SGPI_BDModel.Asignatura">
+        <MappingFragment StoreEntitySet="Asignatura">
+          <ScalarProperty Name="IdAsignatura" ColumnName="IdAsignatura" />
+          <ScalarProperty Name="NombreAsignatura" ColumnName="NombreAsignatura" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Creditos" ColumnName="Creditos" />
+          <ScalarProperty Name="nivel" ColumnName="nivel" />
+          <ScalarProperty Name="IdProgramacion" ColumnName="IdProgramacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documento">
+      <EntityTypeMapping TypeName="SGPI_BDModel.Documento">
+        <MappingFragment StoreEntitySet="Documento">
+          <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
+          <ScalarProperty Name="Documento1" ColumnName="Documento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estudiante">
+      <EntityTypeMapping TypeName="SGPI_BDModel.Estudiante">
+        <MappingFragment StoreEntitySet="Estudiante">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Archino" ColumnName="Archino" />
+          <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genero">
+      <EntityTypeMapping TypeName="SGPI_BDModel.Genero">
+        <MappingFragment StoreEntitySet="Genero">
+          <ScalarProperty Name="Genero1" ColumnName="Genero" />
+          <ScalarProperty Name="TipoGenero" ColumnName="TipoGenero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Homologacion">
+      <EntityTypeMapping TypeName="SGPI_BDModel.Homologacion">
+        <MappingFragment StoreEntitySet="Homologacion">
+          <ScalarProperty Name="IdHomologacion" ColumnName="IdHomologacion" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Programa" ColumnName="Programa" />
+          <ScalarProperty Name="IdAsignatura" ColumnName="IdAsignatura" />
+          <ScalarProperty Name="CodigoHomologacion" ColumnName="CodigoHomologacion" />
+          <ScalarProperty Name="NotaDefinitiva" ColumnName="NotaDefinitiva" />
+          <ScalarProperty Name="Idhomo" ColumnName="Idhomo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pago">
+      <EntityTypeMapping TypeName="SGPI_BDModel.Pago">
+        <MappingFragment StoreEntitySet="Pago">
+          <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="valorPago" ColumnName="valorPago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Programacion">
+      <EntityTypeMapping TypeName="SGPI_BDModel.Programacion">
+        <MappingFragment StoreEntitySet="Programacion">
+          <ScalarProperty Name="IdProgramacion" ColumnName="IdProgramacion" />
+          <ScalarProperty Name="PeriodoAcademico" ColumnName="PeriodoAcademico" />
+          <ScalarProperty Name="Programa" ColumnName="Programa" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Aula" ColumnName="Aula" />
+          <ScalarProperty Name="IdAsignatura" ColumnName="IdAsignatura" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProgramaEstudiantil">
+      <EntityTypeMapping TypeName="SGPI_BDModel.ProgramaEstudiantil">
+        <MappingFragment StoreEntitySet="ProgramaEstudiantil">
+          <ScalarProperty Name="Programa" ColumnName="Programa" />
+          <ScalarProperty Name="tipoPrograma" ColumnName="tipoPrograma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rol">
+      <EntityTypeMapping TypeName="SGPI_BDModel.Rol">
+        <MappingFragment StoreEntitySet="Rol">
+          <ScalarProperty Name="Rol1" ColumnName="Rol" />
+          <ScalarProperty Name="TipoRol" ColumnName="TipoRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoHomologacion">
+      <EntityTypeMapping TypeName="SGPI_BDModel.TipoHomologacion">
+        <MappingFragment StoreEntitySet="TipoHomologacion">
+          <ScalarProperty Name="IdHomo" ColumnName="IdHomo" />
+          <ScalarProperty Name="TipoHomologacion1" ColumnName="TipoHomologacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioAdmin">
+      <EntityTypeMapping TypeName="SGPI_BDModel.UsuarioAdmin">
+        <MappingFragment StoreEntitySet="UsuarioAdmin">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+          <ScalarProperty Name="Programa" ColumnName="Programa" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

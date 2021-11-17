@@ -1,0 +1,32 @@
+﻿body {
+    background: white;
+}
+.btn-Neon {
+    display: inline-block;
+    position: relative;
+    padding: 15px 15px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 25px;
+    text-decoration: none;
+    transition: 0.2s;
+    overflow: hidden;
+    z-index: 1;
+}
+
+    .btn-Neon:hover {
+        text-decoration: none;
+        background: #33BCD5;
+        background: linear-gradient(to top, #33BCD5 0%, rgb(255 255 255 / 70%) 47.5%, rgb(255 255 255) 100%);
+        transition-delay: 0s;
+    }
+.imagenSkull {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    z-index: -1;
+}
+.form {
+    background: #000000;
+}
+
